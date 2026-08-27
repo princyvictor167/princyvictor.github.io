@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="A practical guide to Git installation and Notepad++ setup for technical writers on Windows."
+    >
+    <title>Git Installation and Notepad++ Setup for Writers' Workflow | Princy Victor</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">Princy Victor</a>
+            <div class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <article class="post container">
+            <a class="post-back" href="../index.html">← Back to homepage</a>
+
+            <header class="post-header">
+                <p class="eyebrow">TECHNICAL WRITING / GIT</p>
+                <h1>Git Installation and Notepad++ Setup for Writers' Workflow</h1>
+                <p class="post-meta">February 16, 2025 · Princy Victor</p>
+            </header>
+
+            <div class="post-content">
+                <p>
+                    Git is a version control system widely used in software development to track changes
+                    in files over time. It allows multiple people to work on a project in parallel, keep
+                    track of edits, revert to previous versions, and more. Although Git is widely used
+                    in software development, it is also a useful system for documentation management.
+                </p>
+
+                <figure class="post-image">
+                    <img src="https://princyvictor.wordpress.com/wp-content/uploads/2025/02/why-you-should-consider-git-for-technical-writing.png" alt="Reasons to consider Git for technical writing">
+                    <figcaption>Why technical writers can benefit from using Git.</figcaption>
+                </figure>
+
+                <p>
+                    In this article, I explain how Git works and how technical writers can use it in their
+                    documentation workflow. The examples in this article use Windows.
+                </p>
+
+                <figure class="post-image">
+                    <img src="https://princyvictor.wordpress.com/wp-content/uploads/2025/02/how-git-works.png" alt="Diagram showing how Git works">
+                    <figcaption>Overview of how changes move through Git.</figcaption>
+                </figure>
+
+                <h2>How Git works</h2>
+
+                <h3>Working directory</h3>
+                <p>
+                    The working directory is the location where you make changes to your files. Files in
+                    this location can be untracked, such as new files, or modified files that Git already knows about.
+                </p>
+
+                <h3>Staging area</h3>
+                <p>
+                    Changes made in the working directory are moved to the staging area when you execute
+                    the <code>git add</code> command. This does not permanently save the changes.
+                </p>
+
+                <h3>Local repository</h3>
+                <p>
+                    Changes added to the staging area are saved to the local repository when you execute
+                    <code>git commit</code>. The local repository is stored in the <code>.git</code> directory
+                    inside your project. A commit saves changes only to your local repository; it does not
+                    share them with others.
+                </p>
+
+                <h3>Remote repository</h3>
+                <p>
+                    A remote repository is stored on a server such as GitHub, GitLab, or Bitbucket. Changes
+                    saved in your local repository are shared with the remote repository when you execute
+                    <code>git push</code>. You can retrieve changes from the remote repository using
+                    <code>git pull</code> or <code>git fetch</code>.
+                </p>
+
+                <h2>Common Git terms</h2>
+
+                <dl>
+                    <dt>Branch</dt>
+                    <dd>An alternate line of development where you can try new ideas without changing the main project.</dd>
+
+                    <dt>Merge</dt>
+                    <dd>Combines changes from different branches.</dd>
+
+                    <dt>Commit</dt>
+                    <dd>Takes a snapshot of your work and saves it to the local repository.</dd>
+
+                    <dt>Clone</dt>
+                    <dd>Downloads a copy of another project so you can work on it locally.</dd>
+
+                    <dt>Push</dt>
+                    <dd>Sends commits from your local repository to a shared remote repository.</dd>
+
+                    <dt>Pull</dt>
+                    <dd>Fetches the latest changes from a shared remote repository and integrates them into your local branch.</dd>
+                </dl>
+
+                <h2>Install Git for Windows</h2>
+                <p>
+                    Download Git for Windows from the
+                    <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">official Git website</a>.
+                    After installation is complete, verify it from PowerShell or the command prompt:
+                </p>
+
+                <pre><code>git --version</code></pre>
+
+                <h2>Set up a local repository</h2>
+
+                <h3>Configure your identity</h3>
+                <p>Open PowerShell or the command prompt and configure your name and email address:</p>
+
+                <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</code></pre>
+
+                <p>Verify the configuration with:</p>
+
+                <pre><code>git config --list</code></pre>
+
+                <p>
+                    This guide keeps Git's default branch name unchanged. You can configure a different
+                    default branch name if your team's workflow requires it.
+                </p>
+
+                <h3>Select Notepad++ as the text editor</h3>
+                <p>
+                    If you prefer Notepad++ to editors such as Vim or Nano, configure Git to open files
+                    with Notepad++:
+                </p>
+
+                <pre><code>git config --global core.editor "'C:\Program Files\Notepad++\notepad++.exe'"</code></pre>
+
+                <h3>Create a local repository</h3>
+                <p>
+                    Suppose you want to create a repository called <code>myhellogitrepo</code>. First,
+                    create the directory in a location of your choice. Then navigate to it in the command
+                    prompt and initialize the repository:
+                </p>
+
+                <pre><code>git init</code></pre>
+
+                <figure class="post-image">
+                    <img src="https://princyvictor.wordpress.com/wp-content/uploads/2025/02/git-init-repo.png" alt="Command prompt showing a Git repository initialized with git init">
+                    <figcaption>Initializing the local repository with <code>git init</code>.</figcaption>
+                </figure>
+
+                <p>
+                    Git creates a new <code>.git</code> directory inside <code>myhellogitrepo</code>.
+                    Your local repository is now ready for files and commits.
+                </p>
+
+                <h2>Set up a remote repository</h2>
+                <ol>
+                    <li>Create or sign in to your GitHub account.</li>
+                    <li>Select the <strong>+</strong> icon in the top-right corner and choose <strong>New repository</strong>.</li>
+                    <li>Enter the repository details and select <strong>Create repository</strong>.</li>
+                </ol>
+
+                <p>Connect your local repository to the remote repository:</p>
+
+                <pre><code>git remote add origin &lt;link-of-your-repository&gt;</code></pre>
+
+                <h2>Add files to the remote repository</h2>
+                <p>
+                    Create a file such as <code>sample1.txt</code> inside <code>myhellogitrepo</code>.
+                    Check its status:
+                </p>
+
+                <pre><code>git status</code></pre>
+
+                <figure class="post-image">
+                    <img src="https://princyvictor.wordpress.com/wp-content/uploads/2025/02/git-status.png" alt="Git status showing an untracked sample file">
+                    <figcaption>An untracked file shown by <code>git status</code>.</figcaption>
+                </figure>
+
+                <p>
+                    A new file appears as untracked. Stage the file with:
+                </p>
+
+                <pre><code>git add .</code></pre>
+
+                <p>Verify that the changes are staged:</p>
+
+                <pre><code>git status</code></pre>
+
+                <figure class="post-image">
+                    <img src="https://princyvictor.wordpress.com/wp-content/uploads/2025/02/git-status-after-add.png" alt="Git status showing a staged sample file">
+                    <figcaption>The file after it has been added to the staging area.</figcaption>
+                </figure>
+
+                <p>Save the staged changes to your local repository:</p>
+
+                <pre><code>git commit -m "Add sample file"</code></pre>
+
+                <p>Finally, push the commit to GitHub:</p>
+
+                <pre><code>git push -u origin master</code></pre>
+
+                <p>
+                    You can now see the file in the remote repository. You have successfully moved a file
+                    from your working directory to a shared GitHub repository.
+                </p>
+
+                <figure class="post-image">
+                    <img src="https://princyvictor.wordpress.com/wp-content/uploads/2025/02/git-remote-repo.png" alt="Remote Git repository showing the pushed sample file">
+                    <figcaption>The sample file after it has been pushed to the remote repository.</figcaption>
+                </figure>
+
+                <p class="post-closing">
+                    Git provides technical writers with a reliable way to manage documentation versions,
+                    collaborate with development teams, review changes, and maintain a clear history of edits.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© <span id="year"></span> Princy Victor. All rights reserved.</p>
+            <p><a href="../index.html">Back to homepage</a></p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
